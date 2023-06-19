@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 .then(() => {
   console.log('MongoDB connected successfully');
 }).catch((err) => {
-  console.log('MongoDB connection error:', err);
+  console.log('MongoDB connection error==========>', err);
 });
 
-module.exports =mongoose
+module.exports =mongoose 

@@ -14,6 +14,7 @@ const mystorage = multer.diskStorage({
     filename = fl 
   }
 })
+
 const upload = ()=>{
   multer({storage:mystorage})
 } 
@@ -35,7 +36,8 @@ console.log(" creat is successfully")
 const GetProducts = async (req, res) => {
     try {
       const products = await Product.find();
-      res.status(200).json(products);
+      res.status(200).json({data:products, res:"ok"});
+      console.log("GET PRODUCTS SUCCESSFULLY")
     } catch (error) {
       res.send({ error });
     }

@@ -24,18 +24,3 @@ const product = new Schema({
 },{timestamps:true})
 module.exports = mongoose.model('Product',product)
 
-
-// 
-// 
-
-// const mongoose = require('mongoose')
-// const product = mongoose.model('Product',{
-    // name:{
-        // type:String
-    // },
-    // description:{
-        // type:String
-    // },
-// 
-// })
-// module.exports = product

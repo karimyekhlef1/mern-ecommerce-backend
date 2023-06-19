@@ -31,11 +31,11 @@ const logIn = async (req, res) => {
     console.log ({ email, password })
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(200).send('User not found. Please sign up.');
+      return res.status(200).send({msg:' Email not found '});
     }
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(200).send('the password incorrect ');
+      return res.status(200).send({msg:'the password incorrect '});
     }
         const accessToken = jwt.sign({
           id:user._id,
