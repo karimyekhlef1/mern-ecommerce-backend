@@ -87,11 +87,14 @@ const GetProductById= async (req, res) => {
   const DeleteProduct = async (req, res) => {
     try {
       const id = req.params.id;
-      const test = await Product.findById(id);
-      if (!test) {
-        return res.status(400).json({ msg: "This ID does not exist" });
-      }
+      await Product.findByIdAndDelete(id);
       return res.status(200).send('Delete complete');
+
+      // const test =
+      // if (!test) {
+      //   return res.status(400).json({ msg: "This ID does not exist" });
+      // }
+      // return res.status(200).send('Delete complete');
     } catch (error) {
       return res.status(500).send("Failed to delete the product");
     }

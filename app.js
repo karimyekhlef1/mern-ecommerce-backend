@@ -9,10 +9,11 @@ app.use(express.json())
 
 const UserRoute =require('./routes/UserRoute')
 const ProductRoute =require('./routes/ProductRoute')
-
+const OrderRoute = require('./routes/OrderRoute')
 
 app.use('/api/user',UserRoute)
 app.use('/api/product',ProductRoute)
+app.use('/api/order',OrderRoute)
 
 
 

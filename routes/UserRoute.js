@@ -8,5 +8,4 @@ const router = express.Router()
 router.post('/singin', SingIn)
 router.post('/login', logIn)
 
-
 module.exports=router

@@ -18,7 +18,7 @@ const {
   router.get('/all', GetProducts)
   router.get('/:id',GetProductById)
   router.put('/update/:id',verifyToken,verifyadmin, UpdateProduct)
-  router.post('/delete/:id',verifyToken,verifyadmin,DeleteProduct) 
+  router.delete('/delete/:id',verifyToken,verifyadmin,DeleteProduct) 
   router.get('/user/:id',GetProductByUser)
 
 module.exports = router

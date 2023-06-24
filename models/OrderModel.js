@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const Order = new Schema({
-    name:{
+    nameUser:{
         type:String,
         required:true
     },
-    phone:{
+    phoneUser:{
         type:String,
         required:true
 
     },
-    address:{
+    addressUser:{
 
     },
     productId: {
