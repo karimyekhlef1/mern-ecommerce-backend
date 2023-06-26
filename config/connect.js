@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 
- const connectionString ='mongodb+srv://admin:admin@cluster0.53qf7r4.mongodb.net/?retryWrites=true&w=majority';
+//  const connectionString =;
 
- mongoose.connect(connectionString)
+ mongoose.connect(process.env.DB_URL)
 
 .then(() => {
   console.log('MongoDB connected successfully');

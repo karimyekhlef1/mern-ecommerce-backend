@@ -21,13 +21,14 @@ const upload = ()=>{
 
 const CreatProduct=  async(req, res) => {
     try{
-      const {titel,description} = req.body
+      // const {titel,description} = req.body
+      console.log("=========>",req.body)
       const  product = new Product({titel,description,userId:req.user.id})
       sevedproduct = await product.save()
       res.send(`${sevedproduct} creat is successfully`)
-console.log(" creat is successfully")
+    console.log(" creat is successfully")
     }catch(error){
-      res.send(error)
+      res.status(400).send(error)
     }
    
     
@@ -37,9 +38,9 @@ const GetProducts = async (req, res) => {
     try {
       const products = await Product.find();
       res.status(200).json({data:products, res:"ok"});
-      console.log("GET PRODUCTS SUCCESSFULLY")
+      console.log("GET PRODUCTS SUCCESSFULLY" )
     } catch (error) {
-      res.send({ error });
+      res.send({ error :error});
     }
   };
 

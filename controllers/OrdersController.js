@@ -1,5 +1,5 @@
 const Order =require('../models/OrderModel')
-const product = require('../models/ProductModel')
+// const product = require('../models/ProductModel')
 
 
 const CreatOrder =  async (req, res) => {
@@ -15,8 +15,6 @@ const CreatOrder =  async (req, res) => {
     res.send(error );
   }
 };
-
-
 
 const GetOrders = async (req, res) => {
   try {
@@ -34,11 +32,22 @@ const GetOrders = async (req, res) => {
       }
     ]);
 
-    res.send({ data: orders, res: 'ok' });
+    res.send({ data: orders, res: 'hih' });
   } catch (error) {
     res.send({ error });
   }
-};
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,6 +11,7 @@ const Order = new Schema({
 
     },
     addressUser:{
+        type:String,
 
     },
     productId: {
@@ -18,5 +19,9 @@ const Order = new Schema({
         ref: 'Product',
         required: true
       },
+    active :{
+        type:Boolean,
+        default:false
+    }
 },{timestamps:true})
 module.exports = mongoose.model('Order',Order)
