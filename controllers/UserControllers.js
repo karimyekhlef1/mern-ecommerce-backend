@@ -45,6 +45,7 @@ const logIn = async (req, res) => {
 
     // Login successful, send back token or redirect to home page
     res.status(200).json({other , accessToken}); 
+    console.log('Login successful')
    } catch(error) {
     console.error(error.message);
     res.status(500).send(false);
