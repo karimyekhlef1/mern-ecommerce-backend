@@ -4,7 +4,6 @@ const Order = require("../models/OrderModel");
 const CreatOrder = async (req, res) => {
   try {
     const { nameUser, phoneUser, addressUser, productId } = req.body;
-
     const order = new Order({ nameUser, phoneUser, addressUser, productId });
     await order.save();
 
@@ -30,8 +29,13 @@ const GetOrders = async (req, res) => {
         $unwind: "$product", // Unwind the 'product' array
       },
     ]);
+    if(orders ){
+      res.send({ data: orders, msg: "There is no order" });
 
-    res.send({ data: orders, res: "hih" });
+    }else {
+      res.send({ data: orders, msg: "" });
+
+    }
   } catch (error) {
     res.send({ error });
   }
